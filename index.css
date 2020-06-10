@@ -29,7 +29,7 @@ h2 {
   box-sizing: border-box;
   color: #333;
   cursor: pointer;
-  font-family: fantasy;
+  font-family: fantasy, cursive, sans-serif;
   font-size: 60px;
   height: 100px;
   line-height: 100px;
