@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "comicsans";
+  src: url("fonts/comicsansms3.ttf");
+}
 * {
   font-family: cursive;
 }
@@ -29,12 +33,11 @@ h2 {
   box-sizing: border-box;
   color: #333;
   cursor: pointer;
-  font-family: fantasy, cursive, sans-serif;
+  font-family: "comicsans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 60px;
   height: 100px;
   line-height: 100px;
   margin: 0 auto;
-  padding-top: 5px;
   text-align: center;
   vertical-align: middle;
   width: 100px;
