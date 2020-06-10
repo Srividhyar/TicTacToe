@@ -5,6 +5,7 @@ let winCount = {
   X: 0,
   O: 0,
 };
+let playCount = 0;
 const winList = [
   [1, 2, 3],
   [4, 5, 6],
@@ -31,6 +32,11 @@ const winTitle = document.getElementById("winTitle");
 const celebrate = document.querySelector(".celebrate");
 const xCount = document.getElementById("xCount");
 const oCount = document.getElementById("oCount");
+const playCounter = document.getElementById("playCount");
+const closeInfo = document.getElementById("closeInfo");
+const howToPlay = document.getElementById("howToPlay");
+
+playCounter.innerHTML = playCount;
 
 const mouseOver = (e) => {
   if (
@@ -93,6 +99,7 @@ const clearBoard = () => {
   let timeout = 2000;
   let classList = [];
   let gameStatus;
+  playCount++;
   if (winIndex) {
     board.classList.add("blur");
     classList = [...storkeList[winIndex - 1].split(","), "show"];
@@ -111,6 +118,7 @@ const clearBoard = () => {
   xCount.innerHTML = `X - ${winCount["X"]}`;
   oCount.innerHTML = `O - ${winCount["O"]}`;
   winTitle.innerHTML = gameStatus;
+  playCounter.innerHTML = playCount;
   setTimeout(() => {
     document.querySelectorAll("#tictactoe div").forEach((ele) => {
       ele.innerHTML = "";
@@ -130,6 +138,23 @@ const clearBoard = () => {
 const getText = (dataAttr) =>
   document.querySelector(`[data-id="${dataAttr}"]`).innerHTML;
 
+const closeInfoPanel = () => {
+  howToPlay.classList.add("hide");
+};
+const showInfoPanel = () => {
+  howToPlay.classList.remove("hide");
+};
 board.addEventListener("click", boardClick);
 board.addEventListener("mouseover", mouseOver);
 board.addEventListener("mouseout", mouseOut);
+closeInfo.addEventListener("click", closeInfoPanel);
+howInfo.addEventListener("click", showInfoPanel);
+
+fetch("https://api.countapi.xyz/hit/csb-uvryl.netlify.app/visits")
+  .then((data) => data.json())
+  .then(
+    (result) =>
+      (document.getElementById(
+        "pageVisitCount"
+      ).innerHTML = `Visits: ${result.value}`)
+  );

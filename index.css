@@ -3,20 +3,19 @@
   src: url("fonts/comicsansms3.ttf");
 }
 * {
-  font-family: cursive;
+  font-family: "comicsans";
 }
 h2 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 35px;
-  margin: 100px;
+  margin: 50px 0px;
   text-align: center;
 }
 #wrapper {
   height: 300px;
   margin: 0 auto;
   position: relative;
-  top: -75px;
   vertical-align: middle;
   width: 300px;
 }
@@ -115,6 +114,7 @@ h2 {
   top: 50%;
   width: 300px;
   font-weight: bold;
+  font-family: cursive;
 }
 .success {
   color: green;
@@ -174,4 +174,85 @@ h2 {
 }
 #winCount div:last-child {
   background: slategray;
+}
+
+#playCounter {
+  text-align: center;
+  font-family: monospace;
+  font-size: 22px;
+}
+
+#pageVisitCount {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #ccc;
+  border-radius: 5px 0 0 0;
+  border: 1px solid #ccc;
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px;
+  font-family: monospace;
+  color: #1264e2;
+  font-weight: bold;
+}
+#howToPlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  overflow: auto;
+  background: #444;
+  color: #fff;
+}
+#howToPlay h3,
+#howToPlay h4,
+#howToPlay ul li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3,
+h4 {
+  text-align: center;
+}
+#howToPlay ul {
+  width: 370px;
+  margin: 50px auto;
+}
+h4 {
+  padding: 10px;
+  margin: 0 auto;
+  width: auto;
+}
+#closeInfo {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  font-family: "comicsans", sans-serif;
+  background: transparent;
+  color: #fff;
+  border: none;
+}
+#howToPlay.hide {
+  display: none;
+}
+
+#howInfo {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#howInfo span {
+  border-bottom: 1px solid;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+#closeInfo {
+  cursor: pointer;
 }
